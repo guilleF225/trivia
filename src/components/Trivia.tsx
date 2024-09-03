@@ -177,7 +177,7 @@ const Trivia = () => {
       {isLoading && <p>Cargando...</p>}
       {!userAlreadyPlayed && questions && !isEnded && isStarted && (
         <div
-          className={`flex flex-col items-center justify-center gap-4 m-4 p-8 w-3/4 text-white rounded-lg ${bg_color}`}
+          className={`flex flex-col items-center justify-center gap-4 m-4 p-8 w-screen md:w-3/4 text-white rounded-lg ${bg_color}`}
         >
           <p>Puntos : {score}</p>
           <h3 className="text-xl font-bold">
