@@ -1,0 +1,27 @@
+---
+import supabase from "@/utils/supabase";
+
+const { data, error } = await supabase
+  .from("userscores")
+  .select("*")
+  .order("score", { ascending: false });
+
+if (error) {
+  console.log(error);
+}
+
+console.log(data);
+---
+
+<section class="flex flex-col items-center justify-center gap-4 m-8 text-white">
+  <h1 class="text-4xl font-bold">Puntuaciónes</h1>
+  <main class="flex border-gray-600 border p-8 rounded-lg flex-col items-center justify-start gap-4 m-4 text-white">
+    {data &&data.map((user, index) => (
+      <div class="flex border-b-gray-600 border-b w-full flex-row items-center justify-center gap-4 m-8 text-white">
+        <p># {index + 1}  </p>
+        <p>{user.username} </p>
+        <p>{user.score}</p>
+      </div>
+    ))}
+  </main>
+</section>
