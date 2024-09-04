@@ -165,7 +165,7 @@ const Trivia = () => {
       {userAlreadyPlayed && (
         <h4 className="text-2xl font-bold">¡Vuelve mañana para jugar!</h4>
       )}
-      {!isStarted && !userAlreadyPlayed && (
+      {!isStarted && !isEnded && !userAlreadyPlayed && (
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           onClick={startGame}
